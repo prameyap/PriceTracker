@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "123",
+      "name": "Wireless Headphones",
+      "price": "99.99"
+    },
+    {
+      "id": "456",
+      "name": "Smartphone",
+      "price": "699.99"
+    },
+    {
+      "id": "789",
+      "name": "Laptop",
+      "price": "1299.99"
+    }
+  ]
+}

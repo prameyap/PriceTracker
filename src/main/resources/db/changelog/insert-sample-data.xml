@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="insert-sample-products" author="developer">
+        <comment>Insert 5 sample products for testing and demonstration</comment>
+
+        <!-- Sample Product 1: iPhone 15 Pro -->
+        <insert tableName="products">
+            <column name="product_id" value="apple-iphone-15-pro-256gb"/>
+            <column name="product_url" value="https://www.apple.com/iphone-15-pro/"/>
+            <column name="price" value="999.99"/>
+        </insert>
+
+        <!-- Sample Product 2: MacBook Air M3 -->
+        <insert tableName="products">
+            <column name="product_id" value="apple-macbook-air-m3-13inch"/>
+            <column name="product_url" value="https://www.apple.com/macbook-air-13-and-15-m3/"/>
+            <column name="price" value="1299.00"/>
+        </insert>
+
+        <!-- Sample Product 3: Sony WH-1000XM5 Headphones -->
+        <insert tableName="products">
+            <column name="product_id" value="sony-wh1000xm5-headphones"/>
+            <column name="product_url" value="https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-s"/>
+            <column name="price" value="349.99"/>
+        </insert>
+
+        <!-- Sample Product 4: Samsung 4K Smart TV -->
+        <insert tableName="products">
+            <column name="product_id" value="samsung-65inch-4k-smart-tv"/>
+            <column name="product_url" value="https://www.samsung.com/us/televisions-home-theater/tvs/"/>
+            <column name="price" value="799.99"/>
+        </insert>
+
+        <!-- Sample Product 5: Nintendo Switch OLED -->
+        <insert tableName="products">
+            <column name="product_id" value="nintendo-switch-oled-console"/>
+            <column name="product_url" value="https://www.nintendo.com/us/switch/oled-model/"/>
+            <column name="price" value="349.99"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet id="insert-sample-price-alerts" author="developer">
+        <comment>Insert sample price alerts for demonstration</comment>
+
+        <!-- Price Alert 1: User wants iPhone when price drops to $899 -->
+        <insert tableName="price_alert">
+            <column name="user_id" value="john.doe@email.com"/>
+            <column name="product_id" value="1"/> <!-- References iPhone product -->
+            <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
+            <column name="notification_count" value="0"/>
+        </insert>
+
+        <!-- Price Alert 2: User wants MacBook when price drops to $1199 -->
+        <insert tableName="price_alert">
+            <column name="user_id" value="jane.smith@email.com"/>
+            <column name="product_id" value="2"/> <!-- References MacBook product -->
+            <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
+            <column name="notification_count" value="0"/>
+        </insert>
+
+        <!-- Price Alert 3: User wants Sony headphones -->
+        <insert tableName="price_alert">
+            <column name="user_id" value="bob.wilson@email.com"/>
+            <column name="product_id" value="3"/> <!-- References Sony headphones -->
+            <column name="is_active" value="true"/>
+            <column name="frequency" value="midnight"/>
+            <column name="notification_count" value="1"/>
+            <column name="last_checked_at" valueComputed="CURRENT_TIMESTAMP - 1"/>
+        </insert>
+
+        <!-- Price Alert 4: User wants Samsung TV -->
+        <insert tableName="price_alert">
+            <column name="user_id" value="alice.johnson@email.com"/>
+            <column name="product_id" value="4"/> <!-- References Samsung TV -->
+            <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
+            <column name="notification_count" value="0"/>
+        </insert>
+
+        <!-- Price Alert 5: Inactive alert for Nintendo Switch -->
+        <insert tableName="price_alert">
+            <column name="user_id" value="charlie.brown@email.com"/>
+            <column name="product_id" value="5"/> <!-- References Nintendo Switch -->
+            <column name="is_active" value="false"/>
+            <column name="frequency" value="midnight"/>
+            <column name="notification_count" value="3"/>
+            <column name="last_checked_at" valueComputed="CURRENT_TIMESTAMP - 7"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
