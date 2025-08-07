@@ -39,7 +39,6 @@
             <column name="product_id"/>
         </createIndex>
 
-
         <!-- Add check constraint for positive prices -->
         <sql>
             ALTER TABLE products ADD CONSTRAINT chk_positive_price

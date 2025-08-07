@@ -1,1 +1,11 @@
+com/pricetracker/domain/Product.class
+com/pricetracker/service/PriceAlertScheduler.class
 com/pricetracker/PriceTrackerApplication.class
+com/pricetracker/responsemodel/PriceAlertResponse.class
+com/pricetracker/service/ProductService.class
+com/pricetracker/service/NotificationService.class
+com/pricetracker/service/PriceAlertService.class
+com/pricetracker/repository/PriceAlertRepository.class
+com/pricetracker/requestmodel/PriceAlertRequest.class
+com/pricetracker/domain/PriceAlert.class
+com/pricetracker/controller/PriceAlertController.class

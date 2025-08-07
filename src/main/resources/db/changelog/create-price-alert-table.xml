@@ -28,6 +28,10 @@
                 <constraints nullable="false"/>
             </column>
 
+            <column name="frequency" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
             <column name="updated_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
@@ -50,10 +54,18 @@
                 constraintName="fk_price_alert_product"
                 onDelete="CASCADE"
                 onUpdate="CASCADE"/>
-
+        <!-- Add check constraint for valid frequencies -->
+        <sql>
+            ALTER TABLE price_alert ADD CONSTRAINT chk_frequency
+            CHECK (frequency IN ('morning', 'midnight'))
+        </sql>
         <!-- Add indexes for better query performance -->
         <createIndex indexName="idx_price_alert_user_id" tableName="price_alert">
             <column name="user_id"/>
+        </createIndex>
+
+        <createIndex indexName="idx_price_alert_frequency" tableName="price_alert">
+            <column name="frequency"/>
         </createIndex>
 
         <createIndex indexName="idx_price_alert_active" tableName="price_alert">

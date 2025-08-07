@@ -21,10 +21,6 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="frequency" type="VARCHAR(50)">
-                <constraints nullable="false"/>
-            </column>
-
             <column name="price" type="DECIMAL(10,2)">
                 <constraints nullable="false"/>
             </column>
@@ -43,15 +39,6 @@
             <column name="product_id"/>
         </createIndex>
 
-        <createIndex indexName="idx_products_frequency" tableName="products">
-            <column name="frequency"/>
-        </createIndex>
-
-        <!-- Add check constraint for valid frequencies -->
-        <sql>
-            ALTER TABLE products ADD CONSTRAINT chk_frequency
-            CHECK (frequency IN ('24_hours', 'morning', 'midnight', 'every_6_hours', 'daily'))
-        </sql>
 
         <!-- Add check constraint for positive prices -->
         <sql>

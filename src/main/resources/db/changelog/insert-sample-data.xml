@@ -12,7 +12,6 @@
         <insert tableName="products">
             <column name="product_id" value="apple-iphone-15-pro-256gb"/>
             <column name="product_url" value="https://www.apple.com/iphone-15-pro/"/>
-            <column name="frequency" value="24_hours"/>
             <column name="price" value="999.99"/>
         </insert>
 
@@ -20,7 +19,6 @@
         <insert tableName="products">
             <column name="product_id" value="apple-macbook-air-m3-13inch"/>
             <column name="product_url" value="https://www.apple.com/macbook-air-13-and-15-m3/"/>
-            <column name="frequency" value="morning"/>
             <column name="price" value="1299.00"/>
         </insert>
 
@@ -28,7 +26,6 @@
         <insert tableName="products">
             <column name="product_id" value="sony-wh1000xm5-headphones"/>
             <column name="product_url" value="https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-s"/>
-            <column name="frequency" value="every_6_hours"/>
             <column name="price" value="349.99"/>
         </insert>
 
@@ -36,7 +33,6 @@
         <insert tableName="products">
             <column name="product_id" value="samsung-65inch-4k-smart-tv"/>
             <column name="product_url" value="https://www.samsung.com/us/televisions-home-theater/tvs/"/>
-            <column name="frequency" value="daily"/>
             <column name="price" value="799.99"/>
         </insert>
 
@@ -44,7 +40,6 @@
         <insert tableName="products">
             <column name="product_id" value="nintendo-switch-oled-console"/>
             <column name="product_url" value="https://www.nintendo.com/us/switch/oled-model/"/>
-            <column name="frequency" value="midnight"/>
             <column name="price" value="349.99"/>
         </insert>
 
@@ -58,6 +53,7 @@
             <column name="user_id" value="john.doe@email.com"/>
             <column name="product_id" value="1"/> <!-- References iPhone product -->
             <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
             <column name="notification_count" value="0"/>
         </insert>
 
@@ -66,6 +62,7 @@
             <column name="user_id" value="jane.smith@email.com"/>
             <column name="product_id" value="2"/> <!-- References MacBook product -->
             <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
             <column name="notification_count" value="0"/>
         </insert>
 
@@ -74,6 +71,7 @@
             <column name="user_id" value="bob.wilson@email.com"/>
             <column name="product_id" value="3"/> <!-- References Sony headphones -->
             <column name="is_active" value="true"/>
+            <column name="frequency" value="midnight"/>
             <column name="notification_count" value="1"/>
             <column name="last_checked_at" valueComputed="CURRENT_TIMESTAMP - 1"/>
         </insert>
@@ -83,6 +81,7 @@
             <column name="user_id" value="alice.johnson@email.com"/>
             <column name="product_id" value="4"/> <!-- References Samsung TV -->
             <column name="is_active" value="true"/>
+            <column name="frequency" value="morning"/>
             <column name="notification_count" value="0"/>
         </insert>
 
@@ -91,6 +90,7 @@
             <column name="user_id" value="charlie.brown@email.com"/>
             <column name="product_id" value="5"/> <!-- References Nintendo Switch -->
             <column name="is_active" value="false"/>
+            <column name="frequency" value="midnight"/>
             <column name="notification_count" value="3"/>
             <column name="last_checked_at" valueComputed="CURRENT_TIMESTAMP - 7"/>
         </insert>
